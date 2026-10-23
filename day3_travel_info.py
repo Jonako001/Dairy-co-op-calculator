@@ -1,5 +1,6 @@
 import requests
 import os
+import json  # <-- make sure this line is there
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -63,5 +64,10 @@ def run_tool():
         print(f"Region      : {region}")
         print(f"Population  : {population:,}")
         print(f"Currency    : {currencies}")
+
+        # Save to file so we don't need to call API again
+    with open(f"{city.lower()}_weather.json", "w") as f:
+        json.dump(weather_data, f, indent=2)
+    print(f"\nSaved! Check {city.lower()}_weather.json in your folder")
 
 run_tool()
