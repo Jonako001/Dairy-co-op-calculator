@@ -227,8 +227,9 @@ print("Country:", name)
 print("Capital:", capital)
 print("Population:", population)
 print("Currency:", currency)
-
 """
+
+
 
 import requests
 
